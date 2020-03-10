@@ -1,0 +1,25 @@
+{
+  "name": "word-diff-match-patch",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-flow": "^7.8.3",
+    "babel-jest": "^25.1.0",
+    "flow-bin": "^0.120.1",
+    "jest": "^25.0.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "babel src/ -d lib/",
+    "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbosmans/word-diff-match-patch.git"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.8.7"
+  }
+}
