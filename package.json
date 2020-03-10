@@ -1,6 +1,12 @@
 {
   "name": "word-diff-match-patch",
   "version": "1.0.0",
+  "description": "wrapper around  google/diff-match-patch with word based diff",
+  "keywords": [
+    "diff",
+    "diff-match-patch",
+    "google-diff-match-patch"
+  ],
   "description": "",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -12,9 +18,15 @@
   },
   "scripts": {
     "test": "jest",
+    "prepack": "babel src/ -d lib/",
     "build": "babel src/ -d lib/",
     "flow": "flow"
   },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/dbosmans/word-diff-match-patch.git"

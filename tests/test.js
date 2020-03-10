@@ -1,4 +1,4 @@
-import { characterDiff, wordDiff } from '../index'
+import { characterDiff, wordDiff } from '../src'
 
 describe('diff-match-patch tests', () => {
 

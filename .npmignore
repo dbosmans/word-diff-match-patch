@@ -1,0 +1,7 @@
+/src/
+/tests__/
+/node_modules/
+babel.config.js
+.*
+*.iml
+*.tgz

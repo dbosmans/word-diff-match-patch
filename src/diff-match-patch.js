@@ -1011,7 +1011,7 @@ diff_match_patch.whitespaceRegex_ = /\s/;
 diff_match_patch.linebreakRegex_ = /[\r\n]/;
 diff_match_patch.blanklineEndRegex_ = /\n\r?\n$/;
 diff_match_patch.blanklineStartRegex_ = /^\r?\n\r?\n/;
-diff_match_patch.nonWordBoundary = /[^a-zA-Z0-9_]/;
+diff_match_patch.nonWordBoundary = /[^\w\xC0-\xFF]/;
 
 /**
  * Reduce the number of edits by eliminating operationally trivial equalities.
