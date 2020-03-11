@@ -1,6 +1,6 @@
 {
   "name": "another-word-diff",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wrapper around  google/diff-match-patch with word based diff",
   "keywords": [
     "diff",

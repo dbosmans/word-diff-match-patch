@@ -478,7 +478,10 @@ diff_match_patch.prototype.diff_linesToChars_ = function(text1, text2, wordMode 
 
   function getNextBoundary(text, startpos) {
     if (wordMode) {
-      var indexOf = text.substring(startpos || 0).search(diff_match_patch.nonWordBoundary);
+      let indexOf = text.substring(startpos || 0).search(diff_match_patch.nonWordBoundary);
+      if (indexOf === 0) {
+        indexOf = text.substring(startpos || 0).search(diff_match_patch.wordBoundary);
+      }
       return (indexOf >= 0) ? (indexOf + (startpos || 0)) : indexOf;
     }
     return text.indexOf('\n', lineStart);
@@ -505,9 +508,9 @@ diff_match_patch.prototype.diff_linesToChars_ = function(text1, text2, wordMode 
     while (lineEnd < text.length - 1) {
       lineEnd = getNextBoundary(text, lineStart);
       if (lineEnd == -1) {
-        lineEnd = text.length - 1;
+        lineEnd = text.length;
       }
-      var line = text.substring(lineStart, lineEnd + 1);
+      var line = text.substring(lineStart, lineEnd );
 
       if (lineHash.hasOwnProperty ? lineHash.hasOwnProperty(line) :
         (lineHash[line] !== undefined)) {
@@ -523,7 +526,7 @@ diff_match_patch.prototype.diff_linesToChars_ = function(text1, text2, wordMode 
         lineHash[line] = lineArrayLength;
         lineArray[lineArrayLength++] = line;
       }
-      lineStart = lineEnd + 1;
+      lineStart = lineEnd;
     }
     return chars;
   }
@@ -1012,6 +1015,7 @@ diff_match_patch.linebreakRegex_ = /[\r\n]/;
 diff_match_patch.blanklineEndRegex_ = /\n\r?\n$/;
 diff_match_patch.blanklineStartRegex_ = /^\r?\n\r?\n/;
 diff_match_patch.nonWordBoundary = /[^\w\xC0-\xFF]/;
+diff_match_patch.wordBoundary = /[\w\xC0-\xFF]/;
 
 /**
  * Reduce the number of edits by eliminating operationally trivial equalities.
