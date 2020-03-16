@@ -505,7 +505,7 @@ diff_match_patch.prototype.diff_linesToChars_ = function(text1, text2, wordMode 
     var lineEnd = -1;
     // Keeping our own length variable is faster than looking it up.
     var lineArrayLength = lineArray.length;
-    while (lineEnd < text.length - 1) {
+    while (lineEnd < text.length) {
       lineEnd = getNextBoundary(text, lineStart);
       if (lineEnd == -1) {
         lineEnd = text.length;

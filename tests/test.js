@@ -32,4 +32,10 @@ describe('diff-match-patch tests', () => {
     expect(diff[1][1]).toBe('def ')
   })
 
+  test('word diff add letter end', () => {
+    const diff = wordDiff("abc cd", "abc cd e")
+    expect(diff.length).toBe(2)
+    expect(diff[1][1]).toBe(' e')
+  })
+
 })
